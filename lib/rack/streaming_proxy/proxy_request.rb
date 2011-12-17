@@ -20,7 +20,7 @@ class Rack::StreamingProxy
 
       %w(Accept Accept-Encoding Accept-Charset
         X-Requested-With Referer User-Agent Cookie
-        Authorization
+        Authorization Transfer-Encoding
         ).each do |header|
         key = "HTTP_#{header.upcase.gsub('-', '_')}"
         proxy_request[header] = request.env[key] if request.env[key]
